@@ -1,0 +1,12 @@
+# Root-level requirements file
+#
+# This project's Python dependencies are managed within the backend/
+# service. Install them with:
+#
+#     pip install -r backend/requirements.txt
+#
+# This root file is kept for tooling/CI systems that expect a
+# requirements.txt at the repository root, and simply points to the
+# backend requirements file.
+
+-r backend/requirements.txt

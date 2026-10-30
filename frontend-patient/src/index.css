@@ -1,0 +1,323 @@
+/* ==========================================================================
+   SleepGPT — Design Tokens
+   --------------------------------------------------------------------------
+   Palette: a quiet nocturnal ink paired with a warm paper surface — calm
+   enough for a patient answering health questions at night, credible
+   enough for a clinician scanning scores. Teal is the single clinical
+   accent; amber/coral/sage are reserved strictly for risk signaling so
+   they keep their meaning.
+   Type: Fraunces (display, patient-facing warmth) + Inter (body/UI) +
+   IBM Plex Mono (scores & data — gives the admin view a lab-readout feel).
+   Signature: a breathing/respiration sine-wave motif, used as a divider
+   and as the risk-badge underline — it's the one recurring visual idea.
+   ========================================================================== */
+
+:root {
+  /* Color */
+  --ink-950: #0e1a2b;
+  --ink-900: #131f30;
+  --ink-700: #33455c;
+  --slate-600: #57667c;
+  --slate-400: #8b97a8;
+  --paper: #f6f5f1;
+  --paper-dim: #ece9e1;
+  --surface: #ffffff;
+  --line: #dcd8cd;
+
+  --teal-700: #155158;
+  --teal-600: #1f6f78;
+  --teal-500: #2c8b93;
+  --teal-100: #dcecec;
+  --teal-tint: #e4f0f0;
+
+  --sage-600: #4d7a4f;
+  --sage-tint: #e7f0e5;
+  --amber-600: #b5791f;
+  --amber-tint: #faf0dc;
+  --coral-600: #b23c30;
+  --coral-tint: #fbe8e4;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* Layout */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --shadow-card: 0 1px 2px rgba(14, 26, 43, 0.04), 0 8px 24px rgba(14, 26, 43, 0.06);
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink-950);
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--slate-600);
+}
+
+a {
+  color: var(--teal-600);
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+/* Visible keyboard focus, everywhere */
+:focus-visible {
+  outline: 2px solid var(--teal-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------------------------- Buttons ---------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75em 1.5em;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--teal-600);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--teal-700);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--ink-900);
+  border-color: var(--line);
+}
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--slate-400);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--teal-600);
+  padding: 0.5em 0.75em;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--teal-tint);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---------------------------- Forms ---------------------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: 1.1em;
+  text-align: left;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.field input,
+.field select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.7em 0.85em;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-900);
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--teal-500);
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: var(--slate-400);
+}
+
+.field-error {
+  font-size: 0.82rem;
+  color: var(--coral-600);
+  font-weight: 500;
+}
+
+/* ---------------------------- Cards ---------------------------- */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+}
+
+/* ---------------------------- Banners ---------------------------- */
+
+.banner {
+  border-radius: var(--radius-md);
+  padding: 0.9em 1.1em;
+  font-size: 0.92rem;
+  margin-bottom: 1.2em;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6em;
+}
+
+.banner-error {
+  background: var(--coral-tint);
+  color: var(--coral-600);
+}
+
+.banner-info {
+  background: var(--teal-tint);
+  color: var(--teal-700);
+}
+
+/* ---------------------------- Risk badges ---------------------------- */
+
+.risk-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.3em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+}
+
+.risk-low {
+  background: var(--sage-tint);
+  color: var(--sage-600);
+}
+.risk-intermediate {
+  background: var(--amber-tint);
+  color: var(--amber-600);
+}
+.risk-high {
+  background: var(--coral-tint);
+  color: var(--coral-600);
+}
+.risk-unknown {
+  background: var(--paper-dim);
+  color: var(--slate-600);
+}
+
+/* ---------------------------- Utility ---------------------------- */
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.muted {
+  color: var(--slate-400);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.center-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+/* ---------------------------- Print (Download Report) ---------------------------- */
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #report-root,
+  #report-root * {
+    visibility: visible;
+  }
+  #report-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .print-only {
+    display: block !important;
+  }
+  button {
+    display: none !important;
+  }
+}

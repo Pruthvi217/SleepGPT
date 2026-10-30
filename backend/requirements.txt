@@ -1,0 +1,20 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-ollama
+chromadb
+sentence-transformers
+pypdf
+python-docx
+unstructured
+faiss-cpu
+pandas
+numpy
+scikit-learn
+python-multipart
+requests
+
+# ---------- ML / IoT integration ----------
+python-dotenv
+h5py            # optional: a built-in fallback reader handles the supplied weights file

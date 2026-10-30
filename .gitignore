@@ -1,0 +1,10 @@
+
+# ---------- SleepGPT patient data (prototype JSON store) ----------
+backend/data/*
+!backend/data/.gitkeep
+
+# secrets / local state
+backend/.env
+.env
+backend/data/.session_secret
+node_modules/

@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "total_questions": 35,
+  "questions": [
+    {"id": 1, "key": "age", "question": "What is your age?", "type": "number", "unit": "years", "min": 18, "max": 120, "category": "demographics", "required": true},
+    {"id": 2, "key": "sex", "question": "What is your sex assigned at birth?", "type": "choice", "options": ["Male", "Female"], "category": "demographics", "required": true},
+    {"id": 3, "key": "height_cm", "question": "What is your height?", "type": "number", "unit": "cm", "min": 100, "max": 250, "category": "anthropometric", "required": true},
+    {"id": 4, "key": "weight_kg", "question": "What is your weight?", "type": "number", "unit": "kg", "min": 20, "max": 300, "category": "anthropometric", "required": true},
+    {"id": 5, "key": "neck_circumference_cm", "question": "What is your neck circumference (measured at the level of the Adam's apple)?", "type": "number", "unit": "cm", "min": 20, "max": 70, "category": "anthropometric", "required": true},
+    {"id": 6, "key": "waist_circumference_cm", "question": "What is your waist circumference?", "type": "number", "unit": "cm", "min": 40, "max": 200, "category": "anthropometric", "required": false},
+    {"id": 7, "key": "smoking_status", "question": "What is your smoking status?", "type": "choice", "options": ["Never smoked", "Former smoker", "Current smoker"], "category": "lifestyle", "required": true},
+    {"id": 8, "key": "alcohol_before_bed", "question": "How often do you drink alcohol within 3 hours of bedtime?", "type": "choice", "options": ["Never", "Occasionally", "Frequently"], "category": "lifestyle", "required": true},
+
+    {"id": 9, "key": "loud_snoring", "question": "Do you snore loudly (louder than talking or loud enough to be heard through closed doors)?", "type": "yes_no", "category": "stopbang_berlin", "required": true},
+    {"id": 10, "key": "snoring_loudness", "question": "How would you describe the loudness of your snoring?", "type": "choice", "options": ["About as loud as talking", "Louder than talking", "Very loud - can be heard in the next room"], "category": "berlin", "show_if": {"question_id": 9, "equals": "Yes"}, "required": true},
+    {"id": 11, "key": "snoring_frequency", "question": "How frequently do you snore?", "type": "choice", "options": ["1-2 nights per week", "3-4 nights per week", "Almost every night"], "category": "berlin", "show_if": {"question_id": 9, "equals": "Yes"}, "required": true},
+    {"id": 12, "key": "snoring_bothers_others", "question": "Does your snoring bother other people?", "type": "yes_no", "category": "berlin", "show_if": {"question_id": 9, "equals": "Yes"}, "required": true},
+
+    {"id": 13, "key": "observed_apnea", "question": "Has anyone observed you stop breathing, gasp, or choke during your sleep?", "type": "yes_no", "category": "stopbang_berlin", "required": true},
+    {"id": 14, "key": "observed_apnea_frequency", "question": "How often has this been observed?", "type": "choice", "options": ["Nearly every day", "3-4 times a week", "1-2 times a week", "1-2 times a month", "Rarely or never"], "category": "berlin", "show_if": {"question_id": 13, "equals": "Yes"}, "required": true},
+
+    {"id": 15, "key": "daytime_tiredness", "question": "Do you often feel tired, fatigued, or sleepy during the daytime?", "type": "yes_no", "category": "stopbang_berlin", "required": true},
+    {"id": 16, "key": "tiredness_frequency", "question": "How often do you feel this way?", "type": "choice", "options": ["Nearly every day", "3-4 times a week", "1-2 times a week", "Rarely"], "category": "berlin", "show_if": {"question_id": 15, "equals": "Yes"}, "required": true},
+
+    {"id": 17, "key": "fallen_asleep_driving", "question": "Have you ever nodded off or fallen asleep while driving?", "type": "yes_no", "category": "berlin", "required": true},
+
+    {"id": 18, "key": "hypertension", "question": "Do you have high blood pressure or has a doctor told you that you have high blood pressure?", "type": "yes_no", "category": "stopbang_berlin", "required": true},
+    {"id": 19, "key": "hypertension_treated", "question": "Are you currently taking medication to treat your high blood pressure?", "type": "yes_no", "category": "context", "show_if": {"question_id": 18, "equals": "Yes"}, "required": true},
+
+    {"id": 20, "key": "ess_sitting_reading", "question": "How likely are you to doze off while sitting and reading?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 21, "key": "ess_watching_tv", "question": "How likely are you to doze off while watching television?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 22, "key": "ess_sitting_inactive_public", "question": "How likely are you to doze off while sitting inactive in a public place (e.g. a theater or meeting)?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 23, "key": "ess_passenger_car_hour", "question": "How likely are you to doze off as a passenger in a car for an hour without a break?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 24, "key": "ess_lying_down_afternoon", "question": "How likely are you to doze off while lying down to rest in the afternoon?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 25, "key": "ess_sitting_talking", "question": "How likely are you to doze off while sitting and talking to someone?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 26, "key": "ess_sitting_after_lunch_no_alcohol", "question": "How likely are you to doze off while sitting quietly after lunch, without alcohol?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+    {"id": 27, "key": "ess_car_stopped_traffic", "question": "How likely are you to doze off in a car while stopped for a few minutes in traffic?", "type": "scale", "options": ["0 - Would never doze", "1 - Slight chance of dozing", "2 - Moderate chance of dozing", "3 - High chance of dozing"], "category": "ess", "required": true},
+
+    {"id": 28, "key": "morning_headaches", "question": "Do you frequently wake up with a headache?", "type": "yes_no", "category": "context", "required": true},
+    {"id": 29, "key": "dry_mouth_on_waking", "question": "Do you often wake up with a dry mouth or sore throat?", "type": "yes_no", "category": "context", "required": true},
+    {"id": 30, "key": "nocturia", "question": "How many times do you typically wake up to urinate during the night?", "type": "choice", "options": ["0", "1", "2", "3 or more"], "category": "context", "required": true},
+    {"id": 31, "key": "memory_concentration_issues", "question": "Have you noticed problems with memory or concentration recently?", "type": "yes_no", "category": "context", "required": true},
+    {"id": 32, "key": "mood_irritability", "question": "Have you noticed increased irritability or low mood recently?", "type": "yes_no", "category": "context", "required": true},
+    {"id": 33, "key": "family_history_sleep_apnea", "question": "Does anyone in your immediate family have diagnosed sleep apnea?", "type": "yes_no", "category": "context", "required": true},
+    {"id": 34, "key": "current_sleep_aid_medication", "question": "Are you currently taking any sleep aid or sedative medication?", "type": "yes_no", "category": "context", "required": true},
+    {"id": 35, "key": "previous_sleep_study", "question": "Have you ever had a sleep study (polysomnography) done before?", "type": "yes_no", "category": "context", "required": true}
+  ]
+}
